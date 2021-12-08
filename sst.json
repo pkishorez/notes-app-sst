@@ -1,6 +1,6 @@
 {
-	"name": "notes-app-sst",
-	"stage": "dev",
-	"region": "us-east-1",
-	"main": "stacks/index.js"
+  "name": "notes-app-sst",
+  "stage": "dev",
+  "region": "ap-south-1",
+  "main": "stacks/index.js"
 }
