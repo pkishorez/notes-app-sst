@@ -1,5 +1,6 @@
 import StorageStack from "./storage-stack";
 import ApiStack from "./api-stack";
+import AuthStack from "./auth-stack";
 
 export default function main(app) {
   // Set default runtime for all functions
@@ -8,8 +9,13 @@ export default function main(app) {
   });
 
   const storageStack = new StorageStack(app, "storage");
-  new ApiStack(app, "api", {
+  const apiStack = new ApiStack(app, "api", {
     table: storageStack.table,
+  });
+
+  new AuthStack(app, "auth", {
+    api: apiStack.api,
+    bucket: storageStack.bucket,
   });
 
   // Add more stacks
